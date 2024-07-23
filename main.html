@@ -8,10 +8,26 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-			//Write your code here
-			
-		}
+        function secondHighest(arr) {
+            if (arr.length < 2) {
+                return -Infinity;
+            }
+            let highest = -Infinity;
+            let secondHighest = -Infinity;
+            let allSame = true;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== arr[0]) {
+                    allSame = false;
+                }
+                if (arr[i] > highest) {
+                    secondHighest = highest;
+                    highest = arr[i];
+                } else if (arr[i] > secondHighest && arr[i] < highest) {
+                    secondHighest = arr[i];
+                }
+            }
+            return allSame ? -Infinity : secondHighest;
+        }
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
@@ -21,12 +37,12 @@
 			}
 			alert(secondHighest(arr));
 		}
-		Main();
+		// Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
 </script>
 
 </body>
-
+https://www.svgrepo.com/show/345221/thttps://www.s/vrepo.com/show/345221/three-dots.svghree-dots.svg
 </html>
